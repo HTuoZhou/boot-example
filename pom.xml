@@ -10,6 +10,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <modules>
+        <module>boot-rabbitmq</module>
+    </modules>
+
     <groupId>com.boot.example</groupId>
     <artifactId>boot-example</artifactId>
     <version>0.0.1-SNAPSHOT</version>
