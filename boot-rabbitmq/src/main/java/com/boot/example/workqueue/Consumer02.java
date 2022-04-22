@@ -1,15 +1,13 @@
-package com.boot.example.helloworld;
+package com.boot.example.workqueue;
 
+import com.boot.example.util.RabbitMqUtils;
 import com.rabbitmq.client.Channel;
-import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.ConnectionFactory;
 
 /**
  * @author TuoZhou
- * @date 2022/4/20
- * 消费者：接收消息
+ * @date 2022/4/22
  */
-public class Consumer {
+public class Consumer02 {
 
     /**
      * 队列的名称
@@ -20,19 +18,8 @@ public class Consumer {
      * 接收消息
      */
     public static void main(String[] args) throws Exception {
-        // 创建连接工厂
-        ConnectionFactory factory = new ConnectionFactory();
-        // 工厂IP
-        factory.setHost("localhost");
-        // 用户名
-        factory.setUsername("guest");
-        // 密码
-        factory.setPassword("guest");
-
-        // 创建连接
-        Connection connection = factory.newConnection();
         // 获取信道
-        Channel channel = connection.createChannel();
+        Channel channel = RabbitMqUtils.getChannel();
 
         // 接收消息
         // 1、队列名称

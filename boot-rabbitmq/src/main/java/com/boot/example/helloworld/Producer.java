@@ -55,7 +55,7 @@ public class Producer {
         // 4、消息体
         channel.basicPublish("", QUEUE_NAME, null, SEND_MESSAGE.getBytes());
 
-        System.out.println("消息发送成功：" + SEND_MESSAGE);
+        System.out.println("Producer消息发送成功：" + SEND_MESSAGE);
     }
 
 }
