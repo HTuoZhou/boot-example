@@ -5,7 +5,6 @@ import com.rabbitmq.client.Channel;
 
 /**
  * @author TuoZhou
- * @date 2022/4/22
  */
 public class Consumer01 {
 

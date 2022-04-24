@@ -7,7 +7,6 @@ import com.rabbitmq.client.ConnectionFactory;
 
 /**
  * @author TuoZhou
- * @date 2022/4/20
  * 生产者：发送消息
  */
 public class Producer {

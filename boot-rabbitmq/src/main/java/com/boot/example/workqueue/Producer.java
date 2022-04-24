@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 /**
  * @author TuoZhou
- * @date 2022/4/22
  */
 public class Producer {
 

@@ -7,10 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author TuoZhou
  */
 @SpringBootApplication
-public class BootRabbitmqApplication {
+public class BootBootApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(BootRabbitmqApplication.class, args);
+        SpringApplication.run(BootBootApplication.class, args);
     }
 
 }

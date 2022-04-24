@@ -6,7 +6,6 @@ import com.rabbitmq.client.ConnectionFactory;
 
 /**
  * @author TuoZhou
- * @date 2022/4/20
  * 消费者：接收消息
  */
 public class Consumer {

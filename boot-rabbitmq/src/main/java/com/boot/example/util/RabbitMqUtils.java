@@ -6,7 +6,6 @@ import com.rabbitmq.client.ConnectionFactory;
 
 /**
  * @author TuoZhou
- * @date 2022/4/22
  */
 public class RabbitMqUtils {
 
