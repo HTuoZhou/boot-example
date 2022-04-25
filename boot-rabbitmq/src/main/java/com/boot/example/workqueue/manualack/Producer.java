@@ -2,6 +2,7 @@ package com.boot.example.workqueue.manualack;
 
 import com.boot.example.util.RabbitMqUtils;
 import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.MessageProperties;
 
 import java.util.Scanner;
 
@@ -28,7 +29,7 @@ public class Producer {
         // 3、该队列是否只供一个消费者进行消费 默认情况可供多个消费者进行消费
         // 4、是否自动删除
         // 5、其它参数
-        channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+        channel.queueDeclare(QUEUE_NAME, true, false, false, null);
 
         // 从控制台接收消息
         Scanner scanner = new Scanner(System.in);
@@ -40,7 +41,7 @@ public class Producer {
             // 2、路由key
             // 3、其它参数
             // 4、消息体
-            channel.basicPublish("", QUEUE_NAME, null, s.getBytes());
+            channel.basicPublish("", QUEUE_NAME, MessageProperties.PERSISTENT_TEXT_PLAIN, s.getBytes());
 
             System.out.println("Producer消息发送成功：" + s);
         }
