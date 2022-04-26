@@ -20,6 +20,9 @@ public class Consumer01 {
         // 获取信道
         Channel channel = RabbitMqUtils.getChannel();
 
+        // 设置分发方式 0、轮询分发(默认) 1、不公平分发
+        channel.basicQos(1);
+
         // 接收消息
         // 1、队列名称
         // 2、是否自动应答
