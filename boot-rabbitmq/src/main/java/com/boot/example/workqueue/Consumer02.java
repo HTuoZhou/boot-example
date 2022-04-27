@@ -11,7 +11,7 @@ public class Consumer02 {
     /**
      * 队列的名称
      */
-    public static final String QUEUE_NAME = "hello";
+    public static final String QUEUE_NAME = "work-queue";
 
     /**
      * 接收消息

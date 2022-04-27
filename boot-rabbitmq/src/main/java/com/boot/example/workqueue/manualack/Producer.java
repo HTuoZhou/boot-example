@@ -14,7 +14,7 @@ public class Producer {
     /**
      * 队列名称
      */
-    public static final String QUEUE_NAME = "hello";
+    public static final String QUEUE_NAME = "work-queue";
 
     /**
      * 发送消息
@@ -22,12 +22,6 @@ public class Producer {
     public static void main(String[] args) throws Exception {
         // 获取信道
         Channel channel = RabbitMqUtils.getChannel();
-
-        // 开启发布确认
-        // 单个发布确认
-        // 批量发布确认
-        // 异步发布确认
-        channel.confirmSelect();
 
         // 生成队列
         // 1、队列名称

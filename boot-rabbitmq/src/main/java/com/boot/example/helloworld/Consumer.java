@@ -13,7 +13,7 @@ public class Consumer {
     /**
      * 队列的名称
      */
-    public static final String QUEUE_NAME = "hello";
+    public static final String QUEUE_NAME = "hello-world";
 
     /**
      * 接收消息
