@@ -23,6 +23,12 @@ public class Producer {
         // 获取信道
         Channel channel = RabbitMqUtils.getChannel();
 
+        // 开启发布确认
+        // 单个发布确认
+        // 批量发布确认
+        // 异步发布确认
+        channel.confirmSelect();
+
         // 生成队列
         // 1、队列名称
         // 2、队列里面的消息是否持久化(磁盘) 默认情况消息存储在内存中
