@@ -13,6 +13,7 @@
     <modules>
         <module>boot-rabbitmq</module>
         <module>boot-boot</module>
+        <module>boot-netty</module>
     </modules>
 
     <groupId>com.boot.example</groupId>

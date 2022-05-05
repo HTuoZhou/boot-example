@@ -28,7 +28,7 @@ public class WebLogAspect {
      */
     private static final String LINE_SEPARATOR = System.lineSeparator();
 
-    @Pointcut("@annotation(com.boot.basic.common.annotation.WebLog)")
+    @Pointcut("@annotation(com.boot.example.annotation.WebLog)")
     public void webLog() {
     }
 
