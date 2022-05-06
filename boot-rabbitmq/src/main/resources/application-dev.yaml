@@ -1,0 +1,10 @@
+server:
+  port: 8888 #项目访问端口号
+
+#rabbitmq相关
+spring:
+  rabbitmq:
+    host: localhost
+    username: guest
+    password: guest
+    port: 5672
