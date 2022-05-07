@@ -8,3 +8,6 @@ spring:
     username: guest
     password: guest
     port: 5672
+    #发布确认高级配置
+    publisher-confirm-type: CORRELATED
+    publisher-returns: true

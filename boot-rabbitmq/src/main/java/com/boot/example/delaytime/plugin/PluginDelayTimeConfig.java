@@ -29,8 +29,6 @@ public class PluginDelayTimeConfig {
     @Bean
     public Queue delayedQueue() {
         return QueueBuilder.durable(DELAYED_QUEUE_NAME)
-                .exclusive()
-                .autoDelete()
                 .build();
     }
 

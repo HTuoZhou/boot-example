@@ -53,8 +53,6 @@ public class DelayTimeConfig {
     @Bean
     public Queue queueA() {
         return QueueBuilder.durable(QUEUE_A)
-                .exclusive()
-                .autoDelete()
                 .deadLetterExchange(DEAD_LETTER_EXCHANGE_Y)
                 .deadLetterRoutingKey("YD")
                 .ttl(10000)
@@ -64,8 +62,6 @@ public class DelayTimeConfig {
     @Bean
     public Queue queueB() {
         return QueueBuilder.durable(QUEUE_B)
-                .exclusive()
-                .autoDelete()
                 .deadLetterExchange(DEAD_LETTER_EXCHANGE_Y)
                 .deadLetterRoutingKey("YD")
                 .ttl(40000)
@@ -75,8 +71,6 @@ public class DelayTimeConfig {
     @Bean
     public Queue queueC() {
         return QueueBuilder.durable(QUEUE_C)
-                .exclusive()
-                .autoDelete()
                 .deadLetterExchange(DEAD_LETTER_EXCHANGE_Y)
                 .deadLetterRoutingKey("YD")
                 .build();
@@ -85,8 +79,6 @@ public class DelayTimeConfig {
     @Bean
     public Queue deadLetterQueueD() {
         return QueueBuilder.durable(DEAD_LETTER_QUEUE_D)
-                .exclusive()
-                .autoDelete()
                 .build();
     }
 
