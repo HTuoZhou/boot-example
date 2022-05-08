@@ -18,4 +18,16 @@ public class PublishConfirmHighConsumer {
         log.info("接收消息内容：{}", s);
     }
 
+    @RabbitListener(queues = PublishConfirmHighConfig.PUBLISH_CONFIRM_HIGH_BACK_UP_QUEUE)
+    public void receiveBackupMsg(Message message) {
+        String s = new String(message.getBody());
+        log.info("接收备份消息内容：{}", s);
+    }
+
+    @RabbitListener(queues = PublishConfirmHighConfig.PUBLISH_CONFIRM_HIGH_WARNING_QUEUE)
+    public void receiveWarningMsg(Message message) {
+        String s = new String(message.getBody());
+        log.info("接收报警消息内容：{}", s);
+    }
+
 }
