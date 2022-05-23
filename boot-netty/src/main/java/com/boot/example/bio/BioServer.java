@@ -29,12 +29,12 @@ public class BioServer {
             // 监听，等待客户端连接
             System.out.println("等待客户端连接");
             final Socket socket = serverSocket.accept();
-            System.out.println("开启和客户端的连接");
+            System.out.println("客户端连接成功，socket=" + socket);
 
             // 创建一个线程，与之通讯(单独写一个方法)
             executorService.execute(new Runnable() {
                 @Override
-                public void run() { // 我们重新
+                public void run() {
                     // 可以和客户端通讯
                     handler(socket);
                 }
@@ -65,7 +65,7 @@ public class BioServer {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            System.out.println("关闭和客户端的连接");
+            System.out.println("客户端连接断开");
             try {
                 socket.close();
             } catch (IOException e) {
