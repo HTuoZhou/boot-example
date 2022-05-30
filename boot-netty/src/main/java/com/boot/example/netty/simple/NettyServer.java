@@ -43,6 +43,8 @@ public class NettyServer {
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
+                            // 可以使用一个集合管理SocketChannel，再推送消息时，可以将业务加入到各个channel对应的NioEventLoop的taskQueue或scheduleTaskQueue中
+                            log.info("客户端SocketChannel【{}】", ch);
                             ch.pipeline().addLast(new NettyServerHandler());
                         }
                     });
