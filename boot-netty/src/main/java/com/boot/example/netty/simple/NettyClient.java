@@ -39,7 +39,7 @@ public class NettyClient {
                         }
                     });
 
-            log.info("客户端【{}】准备就绪", "127.0.0.1:6666");
+            log.info("客户端准备就绪，绑定端口【{}】", 6666);
 
             // 启动客户端连接服务端
             ChannelFuture channelFuture = bootstrap.connect(new InetSocketAddress("127.0.0.1", 6666)).sync();

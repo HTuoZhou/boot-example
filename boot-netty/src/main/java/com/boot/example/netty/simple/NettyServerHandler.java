@@ -22,10 +22,7 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter {
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         ByteBuf byteBuf = (ByteBuf) msg;
         log.info("读取到客户端【{}】消息【{}】", ctx.channel().remoteAddress(), byteBuf.toString(StandardCharsets.UTF_8));
-    }
 
-    @Override
-    public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
         // 比如我们这里有一个非常耗时的业务
         // Thread.sleep(10 * 1000);
         //
