@@ -1,0 +1,34 @@
+syntax = "proto3"; //版本
+option optimize_for = SPEED; //加快解析
+//option java_package = "com.boot.example.netty.protobuf"; //指定生成到哪个包下
+option java_outer_classname = "NettyMessage"; //生成的外部类名，同时也是文件名
+
+//protobuf使用message管理数据
+//会在NettyMessage外部类生成内部类Message管理Message1和Message2,它是真正的交互对象
+
+message Message{
+  //定义一个枚举类型
+  //在proto3，要求enum的编号从0开始
+  enum MessageTypeEnum{
+    message1Type = 0;
+    message2Type = 1;
+  }
+
+  //用messageEnum来表示传的是哪个枚举类型
+  MessageTypeEnum messageTypeEnum= 1;
+
+  //表示每次枚举类型最多只能出现其中的一个，节省空间
+  oneof messageTypeBody{
+    Message1 message1 = 2;
+    Message2 message2 = 3;
+  }
+}
+
+message Message1{
+  int32  id1 = 1;
+  string name1 = 2;
+}
+message Message2{
+  int32  id2 = 1;
+  string name2 = 2;
+}
