@@ -16,7 +16,8 @@ public class NettyClientChannelInitializer extends ChannelInitializer<SocketChan
     protected void initChannel(SocketChannel ch) throws Exception {
         log.info("客户端SocketChannel【{}】", ch);
         ch.pipeline().addLast(new LongToByteEncoder());
-        ch.pipeline().addLast(new ByteToLongDecoder());
+        // ch.pipeline().addLast(new ByteToLongDecoder());
+        ch.pipeline().addLast(new ByteToLongReplayingDecoder());
         ch.pipeline().addLast(new NettyClientHandler());
     }
 
