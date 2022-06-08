@@ -1,9 +1,7 @@
-package com.boot.example.netty.protobuf;
+package com.boot.example.netty.tcp;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;
-import io.netty.handler.codec.protobuf.ProtobufDecoder;
-import io.netty.handler.codec.protobuf.ProtobufEncoder;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -15,8 +13,6 @@ public class NettyClientChannelInitializer extends ChannelInitializer<SocketChan
     @Override
     protected void initChannel(SocketChannel ch) throws Exception {
         log.info("客户端SocketChannel【{}】", ch);
-        ch.pipeline().addLast(new ProtobufEncoder());
-        ch.pipeline().addLast(new ProtobufDecoder(NettyMessage.Message.getDefaultInstance()));
         ch.pipeline().addLast(new NettyClientHandler());
     }
 

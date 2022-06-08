@@ -1,7 +1,6 @@
 package com.boot.example.netty.protobuf;
 
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.channel.SimpleChannelInboundHandler;
 import lombok.extern.slf4j.Slf4j;
 
@@ -11,7 +10,7 @@ import java.util.Random;
  * @author TuoZhou
  */
 @Slf4j
-public class NettyClientHandler extends SimpleChannelInboundHandler<NettyMessage.Message>{
+public class NettyClientHandler extends SimpleChannelInboundHandler<NettyMessage.Message> {
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
@@ -29,7 +28,7 @@ public class NettyClientHandler extends SimpleChannelInboundHandler<NettyMessage
                     .setMessageTypeEnum(NettyMessage.Message.MessageTypeEnum.message2Type)
                     .setMessage2(NettyMessage.Message2.newBuilder().setId2(1).setName2("姓名").build()).build();
         }
-        log.info("发送消息【{}】给服务端【{}】",message,ctx.channel().remoteAddress());
+        log.info("发送消息【{}】给服务端【{}】", message, ctx.channel().remoteAddress());
 
         ctx.writeAndFlush(message);
     }

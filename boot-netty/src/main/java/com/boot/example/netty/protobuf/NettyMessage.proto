@@ -15,7 +15,7 @@ message Message{
   }
 
   //用messageEnum来表示传的是哪个枚举类型
-  MessageTypeEnum messageTypeEnum= 1;
+  MessageTypeEnum messageTypeEnum = 1;
 
   //表示每次枚举类型最多只能出现其中的一个，节省空间
   oneof messageTypeBody{

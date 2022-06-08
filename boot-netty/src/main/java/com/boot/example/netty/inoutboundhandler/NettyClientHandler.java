@@ -1,11 +1,8 @@
 package com.boot.example.netty.inoutboundhandler;
 
-import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import lombok.extern.slf4j.Slf4j;
-
-import java.nio.charset.StandardCharsets;
 
 /**
  * @author TuoZhou
@@ -16,7 +13,7 @@ public class NettyClientHandler extends SimpleChannelInboundHandler<Long> {
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         Long sendMsg = 123456L;
-        log.info("发送消息【{}】给服务端【{}】",sendMsg,ctx.channel().remoteAddress());
+        log.info("发送消息【{}】给服务端【{}】", sendMsg, ctx.channel().remoteAddress());
         ctx.writeAndFlush(sendMsg);
 
         // 这种情况不会走到LongToByteEncoder->encode
